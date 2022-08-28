@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="/css/custom.css" rel="stylesheet">
+
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        {{ if .success }}
+        <div class="alert alert-success" role="alert">
+            {{ .success }}
+        </div>
+        {{ end }}
+        {{if .error}}
+            <div class="alert alert-danger" role="alert">
+                {{ .error }}
+            </div>
+        {{end}}
+        <div class="container">
+            <div class="screen">
+                <div class="screen__content">
+                    <form method="POST" class="login" action="/backend/login">
+                        <div class="login__field">
+                            <i class="login__icon fas fa-user"></i>
+                            <input name="email" type="text" class="login__input" placeholder="Email">
+                        </div>
+                        <div class="login__field">
+                            <i class="login__icon fas fa-lock"></i>
+                            <input name="password" type="password" class="login__input" placeholder="Password">
+                        </div>
+                        <button class="button login__submit">
+                            <span class="button__text">Log In Now</span>
+                            <i class="button__icon fas fa-chevron-right"></i>
+                        </button>				
+                    </form>
+                    <div class="social-login">
+                        <h3>log in via</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-login__icon fab fa-instagram"></a>
+                            <a href="#" class="social-login__icon fab fa-facebook"></a>
+                            <a href="#" class="social-login__icon fab fa-twitter"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen__background">
+                    <span class="screen__background__shape screen__background__shape4"></span>
+                    <span class="screen__background__shape screen__background__shape3"></span>		
+                    <span class="screen__background__shape screen__background__shape2"></span>
+                    <span class="screen__background__shape screen__background__shape1"></span>
+                </div>		
+            </div>
+        </div>]
+    </body>
+</html>

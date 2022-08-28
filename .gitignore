@@ -4,6 +4,6 @@
 
 go.sum
 
-config/confgi.yaml
+config/config.yaml
 
 /log/*

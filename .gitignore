@@ -2,8 +2,6 @@
 
 .env
 
-go.sum
-
 config/confgi.yaml
 
 /log/*

@@ -1,21 +1,19 @@
 version: '3.8'
 services:
   api:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    image: go_project_coffee
     working_dir: /app
     volumes:
-      - .:/app
+      - .:/build
     ports:
       - "8080:8080"
     depends_on:
       - mysql
       - mongo
-    entrypoint: go run server.go
-    restart: always
+    entrypoint: ./app
+
   mysql:
-    image: mysql
+    image: mysql:5.7
     ports:
       - "3306:3306"
     environment:
@@ -25,5 +23,3 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-      
-    

@@ -2,7 +2,5 @@
 
 .env
 
-config/confgi.yaml
-
-
+config/config.yaml
 /log/*

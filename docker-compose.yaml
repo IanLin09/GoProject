@@ -4,13 +4,14 @@ services:
     image: go_project_coffee
     working_dir: /app
     volumes:
-      - .:/build
+      - .:/app
     ports:
       - "8080:8080"
+      - "6379:6379"
     depends_on:
       - mysql
       - mongo
-    entrypoint: ./app
+    entrypoint: dlv debug --headless --listen=:6379 --log --api-version=2 main.go
 
   mysql:
     image: mysql:5.7
